@@ -1,0 +1,14 @@
+<h1>Welcome to Pauper's Reddit</h1>
+<h3> Here are some of my interests:<br />
+    {{subreddit1}}<br />
+    {{subreddit2}}<br />
+    </h3>
+<input type="text" [(ngModel)]="subreddit1" />
+<button (click)="loadReddit1()">Load Morkie Reddit</button><br />
+<input type="text" [(ngModel)]="subreddit2" />
+<button (click)="loadReddit2()">Load Mustang Reddit</button>
+<ng-container *ngIf="myreddit">
+    <ng-container *ngFor="let ritem of myreddit.data.children">
+        <app-one-reddit [redditItem]="ritem"></app-one-reddit>
+    </ng-container>
+</ng-container>
